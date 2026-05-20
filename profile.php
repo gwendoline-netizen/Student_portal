@@ -27,17 +27,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>UniGwen Profile</h1>
-    <p> <b>Student Number:</b><?php echo $row['student_number'];?></p>
-    <p> <b>Name:</b><?php echo $row['name'];?></p>
-    <p> <b>Surname:</b><?php echo $row['surname'];?></p>
-    <p> <b>Contact Number:</b><?php echo $row['contact_number'];?></p>
-    <p> <b>Module Code:</b><?php echo $row['module_code'];?></p>
-    <p> <b>Email:</b><?php echo $row['email'];?></p>
+    <div class="profile-container">
+        <div class="row">
+            <span class="label">Name:</span>
+            <span class="value"><?php echo $row['name']; ?></span>
+        </div>
+        <div class="row">
+            <span class="label">Surname:</span>
+            <span class="value"><?php echo $row['surname']; ?></span>
+        </div>
+        <div class="row">
+            <span class="label">Student Number:</span>
+            <span class="value"><?php echo $row['student_number']; ?></span>
+        </div>
+        <div class="row">
+            <span class="label">Contact Number:</span>
+            <span class="value"><?php echo $row['contact_number']; ?></span>
+        </div>
+        <div class="row">
+            <span class="label">Module Code:</span>
+            <span class="value"><?php echo $row['module_code']; ?></span>
+        </div>
+        <div class="row">
+            <span class="label">Email:</span>
+            <span class="value"><?php echo $row['email']; ?></span>
+        </div>
+    </div>
     <br>
+    <button><a href="logout.php">Log Out</a></button>
     <br>
-    <a href="Dashboard.php">Back to Dashboard</a>
 </body>
 </html>

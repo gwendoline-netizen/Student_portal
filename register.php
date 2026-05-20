@@ -58,13 +58,14 @@ if(isset($_POST['register'])) {
 <head>
 
     <title>Register</title>
+    <link rel="stylesheet" href="styles.css">
 
 </head>
 
 <body>
 
-
-<h2>Register</h2>
+<div class="container">
+<h1>Register</h1>
 
 <form method="POST">
 
@@ -90,11 +91,11 @@ if(isset($_POST['register'])) {
     <input type="text" name="module_code" placeholder="Modules" required><br><br>
 
 
-      <button type="submit" name="register">Register</button> 
+      <button type="submit" name="register">Continue</button> 
     
     <br><br>
 
-
+</div>
 
 </form>
 
