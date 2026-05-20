@@ -8,9 +8,7 @@
 </head>
 <body>
    
-    <h1><font face="roman times">You have logged out of your student portal </font></h1>
-    <?php
-    echo "php is working"
-    ?>
+    <h1><font face="roman times">You have logged out of your Student Portal </font></h1>
+   
 </body>
 </html>

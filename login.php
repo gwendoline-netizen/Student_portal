@@ -3,7 +3,8 @@
     
     include ("DataB.php");
     
-    if(isset($_POST['Login'])){
+    if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['login']))
+        {
     $student_number = $_POST['student_number'];
     $password = $_POST['password'];
     $sql = "SELECT * FROM users
@@ -12,7 +13,7 @@
 
 $result = mysqli_query($conn, $sql);
 
-    if(mysql_num_rows($result) > 0)
+    if(mysqli_num_rows($result) > 0)
         {
     $_SESSION['student_number'] = $student_number;
     header("Location: dashboard.php");
@@ -35,8 +36,8 @@ $result = mysqli_query($conn, $sql);
 </head>
 <body>
     <form method = "POST"> 
-        <input type = "text" name="Student_number" placeholder="Student Number"><br><br>
-         <input type = "password" name="Password" placeholder="Password"><br><br>
-          <button type = "submit" name="login"> <a href ="dashboard.php">Login</a></button>
+        <input type = "text" name="student_number" placeholder="Student Number"><br><br>
+         <input type = "password" name="password" placeholder="Password"><br><br>
+          <button type = "submit" name="login"> <a href ="profile.php">Login</a></button>
 </body>
 </html>
