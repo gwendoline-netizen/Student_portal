@@ -68,16 +68,25 @@ input{
 }
 
 button{
-    width:100%;
+    width:120px;
+    height: 35px;
+    line-height: 35px;
+
+    display: block;
+
     padding:14px;
-    margin-top:10px;
+    margin:20px auto;
     border:none;
-    font-color:white;
-    background:#971956;
-    color:white;
-    font-size:16px;
-    border-radius: 30px;
+
+    background-color:#9c3c78;
+    color:black;
+
+    font-size:14px;
+    text-align: center;
+
+    border-radius: 20px;
     cursor:pointer;
+
     transition: 0.3s ease;
 
 }
@@ -94,6 +103,15 @@ a{
     text-decoration: none;
 }
 
+ul{
+    list-style-position: inside;
+    text-align: center 
+}
+
+li{
+    margin: 10px 0;
+    color:#333;
+}
 @media (max-width: 600px){
     .container{
         padding:25px;

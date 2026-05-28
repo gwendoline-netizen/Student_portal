@@ -35,9 +35,11 @@ $result = mysqli_query($conn, $sql);
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+   
     <form method = "POST"> 
-        <input type = "text" name="student_number" placeholder="Student Number"><br><br>
-         <input type = "password" name="password" placeholder="Password"><br><br>
+        <input type = "text" name="student_number" required placeholder="Student Number"><br><br>
+         <input type = "password" name="password" required placeholder="Password"><br><br>
           <button type = "submit" name="login"> <a href ="profile.php">Login</a></button>
 </body>
+<?php include("footer.php"); ?>
 </html>
