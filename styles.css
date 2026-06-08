@@ -24,6 +24,21 @@ body{
 
 }
 
+.profile-picture{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+   border: 2px solid #ffc2de;
+    margin: 20px auto;
+}
+
+.profile-pic-container{
+    text-align: center;
+    margin: 20px auto;
+}
+
+
 H1{
     color:#ff4fa3;
     margin-bottom: 20px;
@@ -39,6 +54,15 @@ input{
     outline:none;
 
 }
+
+label{
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color:#ff4fa3;
+}   
 
 .profile-container{
     background:white;
@@ -111,12 +135,4 @@ ul{
 li{
     margin: 10px 0;
     color:#333;
-}
-@media (max-width: 600px){
-    .container{
-        padding:25px;
-    }
-    h1{
-        font-size: 24px;
-    }
 }

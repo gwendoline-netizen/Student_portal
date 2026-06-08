@@ -9,6 +9,7 @@ include("DataB.php");
 if(isset($_POST['register'])) {
 
 
+
     $student_number = $_POST['student_number'];
 
     $name = $_POST['name'];
@@ -21,10 +22,26 @@ if(isset($_POST['register'])) {
 
     $password = $_POST['password'];
 
+    $profile_picture = "";
 
-    $sql = "INSERT INTO users (student_number, name, surname, email, password, contact_number, module_code)
+    if(isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] === UPLOAD_ERR_OK) {
 
-            VALUES ('$student_number', '$name', '$surname', '$email', '$password', '$contact_number','$$module_code')";
+        $uploadDir = 'uploads/';
+        if(!file_exists($uploadDir)) {
+            mkdir($uploadDir, 0755, true);
+        }
+        $fileName = time() . "_" . $_FILES['profile_picture']['name'];
+       
+        move_uploaded_file($_FILES['profile_picture']['tmp_name']
+        , $uploadDir . $fileName);
+
+        $profile_picture = $uploadDir . $fileName;
+    }
+
+
+    $sql = "INSERT INTO users (student_number, name, surname, email, password, contact_number, module_code, profile_picture)
+
+            VALUES ('$student_number', '$name', '$surname', '$email', '$password', '$contact_number','$module_code', '$profile_picture')";
 
 
 
@@ -67,7 +84,7 @@ if(isset($_POST['register'])) {
 <div class="container">
 <h1>Register</h1>
 
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
 
 
    
@@ -90,6 +107,14 @@ if(isset($_POST['register'])) {
 
     <input type="text" name="module_code" placeholder="Modules" required><br><br>
 
+    <div class="profile-picture-container">
+        <img src="default-profile.png" 
+        id= "preview"
+        alt="Profile Picture" 
+        class="profile-pic"><br><br>
+    </div>
+    <label for="profile_picture">Profile Picture:</label><br> 
+    <input type="file" name="profile_picture" accept="image/*"><br><br> 
 
       <button type="submit" name="register">Continue</button> 
     
